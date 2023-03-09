@@ -1,5 +1,5 @@
-function test() {
-    return
+const testFunc = function test() {
+    console.log("This is test")
 }
 
-test()
+testFunc()
