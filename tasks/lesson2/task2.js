@@ -35,6 +35,7 @@ let res3 = (y).toString() > (x).toString();
 console.log(res3);
 console.log(typeof res3);
 
-let res4 = (Number.isNaN(x) + Number.isNaN(y)) / 0;
+// let res4 = (Number.isNaN(x) + Number.isNaN(y)) / 0;
+let res4 = (x - x) / (y - y);
 console.log(res4);
 console.log(typeof res4);
