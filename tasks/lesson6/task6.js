@@ -4,9 +4,14 @@
 const colors = document.querySelectorAll(".color");
 const outprice = document.getElementById("outprice");
 const sizes = document.querySelectorAll(".size");
+const images = document.querySelectorAll(".shoe");
+
+
 
 colors.forEach((color) => {
     color.addEventListener("click", () => {
+
+        curColor = color.getAttribute("color");
 
         price = color.getAttribute("data-price");
         outprice.innerHTML = price;
@@ -15,8 +20,18 @@ colors.forEach((color) => {
             c.classList.remove("active");
         });
         color.classList.add("active");
+
+        images.forEach((shoe) => {
+            if (shoe.getAttribute("color") === color.getAttribute("color")) {
+                shoe.classList.add("show");
+            } else {
+                shoe.classList.remove("show");
+            }
+        })
     });
 });
+
+
 
 sizes.forEach((size) => {
     size.addEventListener("click", () => {
