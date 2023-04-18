@@ -45,6 +45,7 @@ console.log(map.get(2)); // "span"
 
 
 
+//////// рішення зі зміною області видимості за домпомогою let 
 
 let arr = [];
 
@@ -56,3 +57,22 @@ for (let i = 0; i <= 2; i++) {
 
 arr[0](); // 0
 arr[arr.length - 1](); // 2
+
+
+
+
+//////// рішення з замиканням
+
+
+// let arr = [];
+
+// for (var i = 0; i <= 2; i++) {
+//     arr[i] = (function (j) {
+//         return function () {
+//             console.log(j);
+//         };
+//     })(i);
+// }
+
+// arr[0](); // 0
+// arr[arr.length - 1](); // 2
