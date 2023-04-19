@@ -20,3 +20,21 @@ function greetUser() {
 module.exports = {
     greetUser,
 };
+
+
+// const curDate = new Date();
+// module.exports.date = curDate;
+
+// module.exports.showMessage = function (name) {
+
+//     const hour = curDate.getHours();
+
+//     switch (true) {
+//         case hour >= 5 && hour < 11:
+//             return `Good morning ${name}`;
+//         case hour >= 11 && hour < 17:
+//             return `Good afternoon ${name}`;
+//         case hour >= 17:
+//             return `Good evening ${name}`;
+//     }
+// }

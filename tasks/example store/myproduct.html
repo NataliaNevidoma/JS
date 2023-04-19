@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Store Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-links container">
+            <div>
+                <a href="myproduct.html">My Product</a>
+                <a href="create_product.html">Create Product</a>
+            </div>
+            <form class="search-form">
+                <input type="text" class="search-input">
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <div class="products container">
+        <div class="filter-form">
+            <form class="filter">
+                <label for="color-select">Filter by color:</label>
+                <select id="color-select">
+                    <option value="">All colors</option>
+                    <option value="Black">Black</option>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                </select>
+                <button type="button" class="btn filter-btn">Filter</button>
+            </form>
+            <hr>
+            <div class="count">
+                <p>Count total price: <span class="total-price">0</span></p>
+                <button type="button" class="btn count-btn">Count</button>
+            </div>
+        </div>
+
+
+        <div class="product-list"></div>
+    </div>
+    <script src="js/myproduct.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/filterColor.js"></script>
+
+</body>
+
+</html>
