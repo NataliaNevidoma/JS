@@ -1,0 +1,37 @@
+<!-- 13-1 
+На основі AJAX технології напишіть клієнтську частину аплікації (HTML+JavaScript), 
+в якій при натисненні на кнопку надсилається асинхронний GET-запит на сервер, сервер обробляє запит
+ і надсилає його на HTML-сторінку оновлюючи вміст кнопки так як показано в прикладі. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <button id="btn" type="button" onclick="loadDoc()">Vote!</button>
+
+    <script>
+
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("btn").innerHTML = this.responseText + new Date();
+                }
+            };
+            xhttp.open("GET", "data.txt", true);
+            xhttp.send();
+        }
+
+    </script>
+</body>
+
+</html>

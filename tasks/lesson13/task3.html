@@ -1,0 +1,53 @@
+<!-- 13-3
+Використати сервіс 
+https://randomuser.me/
+Та при кожному завантаженні сторінки робити запит до API
+ та рендерити базову інформацію про користувача (аватар, ім`я, вік, стать, країна, логін, пароль, пошта). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="user-info"></p>
+
+<body>
+    <script>
+        const userInfo = document.getElementById('user-info');
+
+        fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then(data => {
+
+                const user = data.results[0];
+
+                const avatar = user.picture.large;
+                const name = user.name.first + ' ' + user.name.last;
+                const age = user.dob.age;
+                const gender = user.gender;
+                const country = user.location.country;
+                const login = user.login.username;
+                const password = user.login.password;
+                const email = user.email;
+
+                userInfo.innerHTML = `
+            <img src="${avatar}" alt="${name}">
+            <p>Name: ${name}</p>
+            <p>Age: ${age}</p>
+            <p>Gender: ${gender}</p>
+            <p>Country: ${country}</p>
+            <p>Login: ${login}</p>
+            <p>Password: ${password}</p>
+            <p>Email: ${email}</p>
+        `;
+            })
+            .catch(error => console.error(error));
+
+    </script>
+</body>
+
+</html>
